@@ -1,23 +1,20 @@
 const inquirer = require("inquirer");
 const axios = require("axios");
-const fs = require('fs');
+const fs = require("fs");
+
 
 // array of questions for user
-const questions = [
+inquirer
+    .prompt([
     {
         type: "input",
-        message: "What is your Project Tittle?",
+        message: "What is your Project Title?",
         name: "title"
     },
     {
         type: "input",
         message: "Provide a detailed description of you project",
         name: "description"
-    },
-    {
-        type: "input",
-        message: "List table of contents",
-        name: "tableOfContents"
     },
     {
         type: "input",
@@ -30,19 +27,15 @@ const questions = [
         name: "usage"
     },
     {
-        type: "input",
-        message: "Choose a license ",
-        name: "license"
+        type: "list",
+        message: "Choose a license",
+        name: "license",
+        choices: ["MIT", "APACHE", "GPL", "None"]
     },
     {
         type: "input",
         message: "Enter contributing guidelines",
         name: "contributing"
-    },
-    {
-        type: "input",
-        message: "Provide test instructions.",
-        name: "tests"
     },
     {
         type: "input",
@@ -59,16 +52,9 @@ const questions = [
         message: "Enter email address and instructions on how to reach you with any additional questions",
         name: "questionsEmail"
     }
-];
+    ])
+    .then((answer) => {
+        const fileTitle = answer.title.toLowerCase().split('').join('') + "_README.md";
+    });
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
 
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
