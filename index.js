@@ -55,8 +55,17 @@ inquirer
     ])
     .then((data) => {
         const fileTitle = data.title.toLowerCase().split('').join('') + "_README.md";
+
         //Function to generate markdown
         generateMarkdown(data);
+
+        fs.writeFile(fileTitle, generateMarkdown, function (err) {
+            if (err) {
+                console.log(err);
+            }
+            console.log("success")
+        })
+
     });
 
 
