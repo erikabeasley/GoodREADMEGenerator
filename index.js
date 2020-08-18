@@ -57,16 +57,51 @@ inquirer
         const fileTitle = data.title.toLowerCase().split('').join('') + "_README.md";
 
         //Function to generate markdown
-        generateMarkdown(data);
+const fileInfo = `# ${data.title}
 
-        fs.writeFile(fileTitle, generateMarkdown, function (err) {
-            if (err) {
-                console.log(err);
-            }
-            console.log("success")
-        })
+## Description
+- ${data.description}
 
-    });
+## Table of Contents
+*[Installation] (#installation) 
+*[Usage] (#usage)
+*[License] (#license)
+*[Contributing] (#contributing)
+*[Tests] (#tests)
+*[Questions] (#questions)
+
+## Installation
+- ${data.installation}
+
+## Usage
+- ${data.usage}
+
+## License
+- ${data.license}      
+
+## Contributing
+- ${data.contributing}
+
+## Test Instructions
+- ${data.tests}
+
+### Questions
+- ${data.github}
+- ${data.email}
+`;
+
+fs.writeFile(fileTitle, fileInfo, function (err) {
+    if (err) {
+        console.log(err);
+    }
+    console.log("success")
+});
+
+});
+
+
+        
+
 
 
 
