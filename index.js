@@ -13,7 +13,7 @@ inquirer
         },
         {
             type: "input",
-            message: "Provide a detailed description of you project",
+            message: "Provide a detailed description of you project.",
             name: "description"
         },
         {
