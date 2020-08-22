@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 const axios = require("axios");
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 inquirer
@@ -56,8 +55,17 @@ inquirer
     .then((data) => {
         const fileTitle = data.title.toLowerCase().split('').join('') + "_README.md";
 
-        //Function to generate markdown
+
+
+
+//Function to generate markdown
+
+const badge = data.license.split(' ').join('%20');
+
 const fileInfo = `# ${data.title}
+
+![License](https://img.shields.io/badge/License-${badge}-blue.svg)
+
 
 ## Description
 - ${data.description}
@@ -86,7 +94,7 @@ const fileInfo = `# ${data.title}
 - ${data.tests}
 
 ### Questions
-###### Reach out to me:
+#### Reach out to me:
 - GitHub: https://github.com/${data.github}
 - Email: ${data.email}
 `;
@@ -98,7 +106,10 @@ fs.writeFile(fileTitle, fileInfo, function (err) {
     console.log("success")
 });
 
+
 });
+
+
 
 
         
