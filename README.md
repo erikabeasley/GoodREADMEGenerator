@@ -14,3 +14,5 @@ The generated README includes the following sections:
 - Tests
 - Questions
 
+## Video Of Functionality
+[![Watch the video]](https://youtu.be/#)

@@ -34,7 +34,7 @@ inquirer
         },
         {
             type: "input",
-            message: "Enter contributing guidelines",
+            message: "Enter contributers:",
             name: "contributing"
         },
         {
@@ -49,7 +49,7 @@ inquirer
         },
         {
             type: "input",
-            message: "Enter email address and instructions on how to reach you with any additional questions",
+            message: "Enter email address:",
             name: "email"
         }
     ])
@@ -86,8 +86,9 @@ const fileInfo = `# ${data.title}
 - ${data.tests}
 
 ### Questions
-- ${data.github}
-- ${data.email}
+If you have any questions or concerns you can reach out to me here:
+- GitHub: https://github.com/${data.github}
+- Email: ${data.email}
 `;
 
 fs.writeFile(fileTitle, fileInfo, function (err) {
