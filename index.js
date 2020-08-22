@@ -86,7 +86,7 @@ const fileInfo = `# ${data.title}
 - ${data.tests}
 
 ### Questions
-If you have any questions or concerns you can reach out to me here:
+###### Reach out to me:
 - GitHub: https://github.com/${data.github}
 - Email: ${data.email}
 `;
