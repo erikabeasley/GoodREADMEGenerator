@@ -15,4 +15,4 @@ The generated README includes the following sections:
 - Questions
 
 ## Video Of Functionality
-[![Watch the video]](https://www.youtube.com/watch?v=Vww9eWX9-rw&feature=youtu.be)
+[![Watch the video](/utils/GRG.PNG)](https://www.youtube.com/watch?v=Vww9eWX9-rw&feature=youtu.be)
